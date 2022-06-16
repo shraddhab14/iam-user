@@ -1,4 +1,4 @@
 for user in $(aws iam list-users --output text | awk '{print $NF}'); do
     aws iam list-access-keys --user $user --output text
     test $? -gt 128 && exit
-done > access_keys.json
+done 
